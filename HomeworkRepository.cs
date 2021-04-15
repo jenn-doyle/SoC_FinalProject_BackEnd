@@ -28,7 +28,7 @@ public class HomeworkRepository : BaseRepository, IHomework<Homework>
         return homework;
     }
 
-    public async Task Insert(Homework homework)
+    public async void Insert(Homework homework)
     {
         using var connection = CreateConnection();
 
@@ -46,7 +46,7 @@ public class HomeworkRepository : BaseRepository, IHomework<Homework>
     }
 
     // Update is for Mark and Reject
-    public async Task Update(long id, long childId, string image, string comment, string annotation)
+    public async void Update(long id, long childId, string image, string comment, string annotation)
     {
         using var connection = CreateConnection();
 

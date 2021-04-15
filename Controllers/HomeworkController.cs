@@ -28,11 +28,11 @@ public class HomeworkController : ControllerBase
     }
 
     [HttpPost]
-    public async Task Insert([FromBody] Homework homework)
+    public async void Insert([FromBody] Homework homework)
     {
         try
         {
-            await _homeworkRepository.Insert(homework);
+            _homeworkRepository.Insert(homework);
         }
         catch (Exception error)
         {
@@ -42,11 +42,11 @@ public class HomeworkController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task Update(long id, [FromBody] Child child)
+    public async void Update(long id, [FromBody] Child child)
     {
         try
         {
-            await _homeworkRepository.Update(id, child.Id, child.Image, child.Comment, child.Annotation);
+            _homeworkRepository.Update(id, child.Id, child.Image, child.Comment, child.Annotation);
         }
         catch (Exception error)
         {
