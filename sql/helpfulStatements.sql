@@ -3,7 +3,7 @@ select * from childrensHomework;
 DELETE FROM childrensHomework WHERE id>324;
 
 select * from homework;
-DELETE FROM homework WHERE id >18 ;
+DELETE FROM homework WHERE id >18;
 
 -- Test JSON data
 
