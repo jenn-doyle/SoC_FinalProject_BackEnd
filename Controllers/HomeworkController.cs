@@ -56,7 +56,7 @@ public class HomeworkController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetHomework(long id)
+    public async Task<IActionResult> GetOne(long id)
     {
         try
         {
@@ -71,7 +71,7 @@ public class HomeworkController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteHomework(long id)
+    public async Task<IActionResult> Delete(long id)
     {
         await _homeworkRepository.Delete(id);
         return Ok();
