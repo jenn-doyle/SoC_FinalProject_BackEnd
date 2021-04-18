@@ -54,4 +54,27 @@ public class HomeworkController : ControllerBase
             Console.WriteLine(error.StackTrace);
         }
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetHomework(long id)
+    {
+        try
+        {
+            var getHomeowrk = await _homeworkRepository.GetOne(id);
+            return Ok(getHomeowrk);
+        }
+        catch (Exception)
+        {
+            //handle exception
+            return NotFound();
+        }
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteHomework(long id)
+    {
+        await _homeworkRepository.Delete(id);
+        return Ok();
+    }
+
 }
